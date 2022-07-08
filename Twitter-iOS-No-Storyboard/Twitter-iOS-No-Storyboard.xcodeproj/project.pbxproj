@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		945C014528789584008BFD8A /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C014428789584008BFD8A /* MainTabController.swift */; };
 		945C0148287896B8008BFD8A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 945C0147287896B8008BFD8A /* SnapKit */; };
+		945C014A28789738008BFD8A /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C014928789738008BFD8A /* FeedController.swift */; };
+		945C014C2878976A008BFD8A /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C014B2878976A008BFD8A /* ExploreController.swift */; };
+		945C014E28789775008BFD8A /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C014D28789775008BFD8A /* NotificationsController.swift */; };
+		945C015028789790008BFD8A /* ConversationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C014F28789790008BFD8A /* ConversationController.swift */; };
 		94D92B29287892A0002598F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D92B28287892A0002598F1 /* AppDelegate.swift */; };
 		94D92B2B287892A0002598F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D92B2A287892A0002598F1 /* SceneDelegate.swift */; };
 		94D92B32287892A1002598F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94D92B31287892A1002598F1 /* Assets.xcassets */; };
@@ -17,6 +21,10 @@
 
 /* Begin PBXFileReference section */
 		945C014428789584008BFD8A /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		945C014928789738008BFD8A /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		945C014B2878976A008BFD8A /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
+		945C014D28789775008BFD8A /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
+		945C014F28789790008BFD8A /* ConversationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationController.swift; sourceTree = "<group>"; };
 		94D92B25287892A0002598F1 /* Twitter-iOS-No-Storyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitter-iOS-No-Storyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D92B28287892A0002598F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94D92B2A287892A0002598F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +70,10 @@
 			isa = PBXGroup;
 			children = (
 				945C014428789584008BFD8A /* MainTabController.swift */,
+				945C014928789738008BFD8A /* FeedController.swift */,
+				945C014B2878976A008BFD8A /* ExploreController.swift */,
+				945C014D28789775008BFD8A /* NotificationsController.swift */,
+				945C014F28789790008BFD8A /* ConversationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,9 +202,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				945C014E28789775008BFD8A /* NotificationsController.swift in Sources */,
 				94D92B29287892A0002598F1 /* AppDelegate.swift in Sources */,
+				945C014C2878976A008BFD8A /* ExploreController.swift in Sources */,
 				94D92B2B287892A0002598F1 /* SceneDelegate.swift in Sources */,
 				945C014528789584008BFD8A /* MainTabController.swift in Sources */,
+				945C015028789790008BFD8A /* ConversationController.swift in Sources */,
+				945C014A28789738008BFD8A /* FeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,10 +352,10 @@
 				INFOPLIST_FILE = "Twitter-iOS-No-Storyboard/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -365,10 +381,10 @@
 				INFOPLIST_FILE = "Twitter-iOS-No-Storyboard/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
