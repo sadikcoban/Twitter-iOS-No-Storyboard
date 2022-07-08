@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		945C014528789584008BFD8A /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C014428789584008BFD8A /* MainTabController.swift */; };
+		945C0148287896B8008BFD8A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 945C0147287896B8008BFD8A /* SnapKit */; };
 		94D92B29287892A0002598F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D92B28287892A0002598F1 /* AppDelegate.swift */; };
 		94D92B2B287892A0002598F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D92B2A287892A0002598F1 /* SceneDelegate.swift */; };
 		94D92B32287892A1002598F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94D92B31287892A1002598F1 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				945C0148287896B8008BFD8A /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +130,9 @@
 			dependencies = (
 			);
 			name = "Twitter-iOS-No-Storyboard";
+			packageProductDependencies = (
+				945C0147287896B8008BFD8A /* SnapKit */,
+			);
 			productName = "Twitter-iOS-No-Storyboard";
 			productReference = 94D92B25287892A0002598F1 /* Twitter-iOS-No-Storyboard.app */;
 			productType = "com.apple.product-type.application";
@@ -156,6 +161,9 @@
 				Base,
 			);
 			mainGroup = 94D92B1C287892A0002598F1;
+			packageReferences = (
+				945C0146287896B8008BFD8A /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 94D92B26287892A0002598F1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -396,6 +404,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		945C0146287896B8008BFD8A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		945C0147287896B8008BFD8A /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 945C0146287896B8008BFD8A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 94D92B1D287892A0002598F1 /* Project object */;
 }
