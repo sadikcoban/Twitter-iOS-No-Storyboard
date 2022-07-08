@@ -13,6 +13,7 @@
 		945C014C2878976A008BFD8A /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C014B2878976A008BFD8A /* ExploreController.swift */; };
 		945C014E28789775008BFD8A /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C014D28789775008BFD8A /* NotificationsController.swift */; };
 		945C015028789790008BFD8A /* ConversationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C014F28789790008BFD8A /* ConversationController.swift */; };
+		945C01522878A4EE008BFD8A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C01512878A4EE008BFD8A /* Extensions.swift */; };
 		94D92B29287892A0002598F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D92B28287892A0002598F1 /* AppDelegate.swift */; };
 		94D92B2B287892A0002598F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D92B2A287892A0002598F1 /* SceneDelegate.swift */; };
 		94D92B32287892A1002598F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94D92B31287892A1002598F1 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		945C014B2878976A008BFD8A /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
 		945C014D28789775008BFD8A /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		945C014F28789790008BFD8A /* ConversationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationController.swift; sourceTree = "<group>"; };
+		945C01512878A4EE008BFD8A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		94D92B25287892A0002598F1 /* Twitter-iOS-No-Storyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitter-iOS-No-Storyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D92B28287892A0002598F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94D92B2A287892A0002598F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		945C014328789513008BFD8A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				945C01512878A4EE008BFD8A /* Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				945C014E28789775008BFD8A /* NotificationsController.swift in Sources */,
 				94D92B29287892A0002598F1 /* AppDelegate.swift in Sources */,
 				945C014C2878976A008BFD8A /* ExploreController.swift in Sources */,
+				945C01522878A4EE008BFD8A /* Extensions.swift in Sources */,
 				94D92B2B287892A0002598F1 /* SceneDelegate.swift in Sources */,
 				945C014528789584008BFD8A /* MainTabController.swift in Sources */,
 				945C015028789790008BFD8A /* ConversationController.swift in Sources */,
