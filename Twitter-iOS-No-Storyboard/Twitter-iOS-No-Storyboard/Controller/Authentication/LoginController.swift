@@ -24,6 +24,7 @@ class LoginController: UIViewController {
                                  tintColor: .white,
                                  hintText: "Email",
                                  keyboard: .emailAddress,
+                                 returnKey: .continue,
                                  delegate: self
         )
         
@@ -36,6 +37,7 @@ class LoginController: UIViewController {
                                  hintText: "Password",
                                  isSecure: true,
                                  keyboard: .default,
+                                 returnKey: .done,
                                  delegate: self
         )
         

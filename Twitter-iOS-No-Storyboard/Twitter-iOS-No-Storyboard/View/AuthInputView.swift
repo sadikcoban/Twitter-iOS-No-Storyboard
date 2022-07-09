@@ -14,6 +14,7 @@ class AuthInputView: UIView {
     private let textFieldHint: String
     private let isSecure: Bool
     private let keyboardType: UIKeyboardType
+    private let returnKeyType: UIReturnKeyType
     let textFieldDelegate: UITextFieldDelegate
     
     
@@ -37,6 +38,7 @@ class AuthInputView: UIView {
         view.isSecureTextEntry = isSecure
         view.attributedPlaceholder = NSAttributedString(string: textFieldHint, attributes: [NSAttributedString.Key.foregroundColor : viewTintColor])
         view.keyboardType = keyboardType
+        view.returnKeyType = returnKeyType
         view.delegate = textFieldDelegate
         return view
     }()
@@ -53,6 +55,7 @@ class AuthInputView: UIView {
          hintText: String,
          isSecure: Bool = false,
          keyboard: UIKeyboardType,
+         returnKey: UIReturnKeyType,
          delegate: UITextFieldDelegate
     ) {
         self.image = image
@@ -60,6 +63,7 @@ class AuthInputView: UIView {
         self.textFieldHint = hintText
         self.isSecure = isSecure
         self.keyboardType = keyboard
+        self.returnKeyType = returnKey
         self.textFieldDelegate = delegate
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         configureUI()
