@@ -77,23 +77,30 @@ class LoginController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.emailView.textField.text = ""
+        self.passwordView.textField.text = ""
+    }
+    
     // MARK: - Selectors
     
     @objc func didTapLogin(){
-        let email = emailView.textField.text
-        let password = passwordView.textField.text
+        let email = emailView.textField.text ?? ""
+        let password = passwordView.textField.text ?? ""
+        print("email: \(email)\npassword: \(password)")
     }
     
     @objc func didTapSignUp(){
-        print("tapped sign up")
+        let controller = RegistrationController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     // MARK: - Helpers
     
     func configureUI(){
         view.backgroundColor = .twitterBlue
-        navigationController?.navigationBar.barStyle = .black
-        navigationController?.navigationBar.isHidden = true
+        
         view.addSubview(logoImageView)
         logoImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()

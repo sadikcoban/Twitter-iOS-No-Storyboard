@@ -95,9 +95,6 @@ class AuthInputView: UIView {
             make.top.equalTo(textField.snp.bottom).offset(8)
             make.height.equalTo(0.75)
         }
-        
-        
-        
     }
     
     
