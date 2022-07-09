@@ -20,13 +20,24 @@ class LoginController: UIViewController {
     }()
     
     private lazy var emailView: AuthInputView = {
-        let view = AuthInputView(image: UIImage(named: "mail")!, tintColor: .white, hintText: "Email")
+        let view = AuthInputView(image: UIImage(named: "mail")!,
+                                 tintColor: .white,
+                                 hintText: "Email",
+                                 keyboard: .emailAddress,
+                                 delegate: self
+        )
         
         return view
     }()
     
-    private lazy var passwordView: UIView = {
-        let view = AuthInputView(image: UIImage(named:"ic_lock_outline_white_2x")!, tintColor: .white, hintText: "Password",isSecure: true)
+    private lazy var passwordView: AuthInputView = {
+        let view = AuthInputView(image: UIImage(named:"ic_lock_outline_white_2x")!,
+                                 tintColor: .white,
+                                 hintText: "Password",
+                                 isSecure: true,
+                                 keyboard: .default,
+                                 delegate: self
+        )
         
         return view
     }()
@@ -47,7 +58,13 @@ class LoginController: UIViewController {
     private lazy var bottomTextButton: AuthBottomButton = {
         let firstStr = "Don't have an account? "
         let secondStr = "Sign Up"
-        let view = AuthBottomButton(firstPartString: firstStr, secondPartString: secondStr, textColor: .white, bgColor: .clear, target: self, selector: #selector(didTapSignUp))
+        let view = AuthBottomButton(firstPartString: firstStr,
+                                    secondPartString: secondStr,
+                                    textColor: .white,
+                                    bgColor: .clear,
+                                    target: self,
+                                    selector: #selector(didTapSignUp)
+        )
         return view
     }()
     
@@ -55,13 +72,16 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         configureUI()
+        
     }
     
     // MARK: - Selectors
     
     @objc func didTapLogin(){
-        
+        let email = emailView.textField.text
+        let password = passwordView.textField.text
     }
     
     @objc func didTapSignUp(){
@@ -101,5 +121,23 @@ class LoginController: UIViewController {
             make.bottom.equalTo(view.safeAreaInsets).offset(-48)
             make.centerX.equalToSuperview()
         }
+    }
+}
+
+extension LoginController: UITextFieldDelegate {
+    
+    private func switchToNextTextField(_ textField: UITextField) {
+
+        switch textField {
+        case self.emailView.textField:
+            passwordView.textField.becomeFirstResponder()
+        default:
+            passwordView.textField.resignFirstResponder()
+        }
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.switchToNextTextField(textField)
+
+        return true
     }
 }

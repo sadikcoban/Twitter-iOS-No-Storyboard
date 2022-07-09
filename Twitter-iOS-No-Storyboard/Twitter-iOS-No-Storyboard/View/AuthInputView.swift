@@ -13,6 +13,9 @@ class AuthInputView: UIView {
     private let viewTintColor: UIColor
     private let textFieldHint: String
     private let isSecure: Bool
+    private let keyboardType: UIKeyboardType
+    let textFieldDelegate: UITextFieldDelegate
+    
     
     private lazy var containerView: UIView = {
         let view = UIView()
@@ -26,14 +29,15 @@ class AuthInputView: UIView {
         return view
     }()
     
-    private lazy var textField: UITextField = {
+    private(set) lazy var textField: UITextField = {
         let view = UITextField()
         view.tintColor = viewTintColor
         view.textColor = viewTintColor
         view.font = .systemFont(ofSize: 16)
         view.isSecureTextEntry = isSecure
         view.attributedPlaceholder = NSAttributedString(string: textFieldHint, attributes: [NSAttributedString.Key.foregroundColor : viewTintColor])
-        
+        view.keyboardType = keyboardType
+        view.delegate = textFieldDelegate
         return view
     }()
     
@@ -44,11 +48,19 @@ class AuthInputView: UIView {
         return view
     }()
     
-    init(image: UIImage, tintColor: UIColor, hintText: String, isSecure: Bool = false) {
+    init(image: UIImage,
+         tintColor: UIColor,
+         hintText: String,
+         isSecure: Bool = false,
+         keyboard: UIKeyboardType,
+         delegate: UITextFieldDelegate
+    ) {
         self.image = image
         self.viewTintColor = tintColor
         self.textFieldHint = hintText
         self.isSecure = isSecure
+        self.keyboardType = keyboard
+        self.textFieldDelegate = delegate
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         configureUI()
         
