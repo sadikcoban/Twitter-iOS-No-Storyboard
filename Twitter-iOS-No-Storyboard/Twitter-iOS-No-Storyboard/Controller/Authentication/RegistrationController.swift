@@ -6,12 +6,13 @@
 //
 
 import UIKit
-
+import Firebase
 class RegistrationController: UIViewController {
     
     // MARK: - Properties
     private let imagePickder = UIImagePickerController ()
-
+    private var profileImage: UIImage?
+    
     private lazy var plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "plus_photo"), for: .normal)
@@ -79,7 +80,7 @@ class RegistrationController: UIViewController {
         button.setTitleColor(.twitterBlue, for: .normal)
         button.backgroundColor = .white
         button.layer.cornerRadius = 5
-        button.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
         
         return button
     }()
@@ -92,7 +93,7 @@ class RegistrationController: UIViewController {
                                     textColor: .white,
                                     bgColor: .clear,
                                     target: self,
-                                    selector: #selector(didTapSignUp)
+                                    selector: #selector(didTapLogin)
         )
         return view
     }()
@@ -111,7 +112,27 @@ class RegistrationController: UIViewController {
     }
     
     @objc func didTapSignUp(){
+        guard let email = emailView.textField.text, email != "" else { return }
+        guard let password = passwordView.textField.text, password != "" else { return }
+        guard let fullname = fullNameView.textField.text, fullname != "" else { return }
+        guard let username = userNameView.textField.text, username != "" else { return }
+        guard let profileImage = profileImage else { return }
         
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("DEBUG ERROR IS: \(error.localizedDescription)")
+                return
+            }
+            guard let result = result else { return }
+            let uid = result.user.uid
+            
+            let values = ["email": email, "username": username, "fullname": fullname]
+            let ref = Database.database().reference().child("users").child(uid)
+            ref.updateChildValues(values) { error, reference in
+                print("successfully registered")
+            }
+            
+        }
     }
     
     @objc func didTapLogin(){
@@ -143,7 +164,7 @@ class RegistrationController: UIViewController {
         stack.spacing = 32
         
         view.addSubview(stack)
-
+        
         stack.snp.makeConstraints { make in
             make.top.equalTo(plusPhotoButton.snp.bottom).offset(20)
             make.leading.equalToSuperview().offset(24)
@@ -161,7 +182,7 @@ class RegistrationController: UIViewController {
 extension RegistrationController: UITextFieldDelegate {
     
     private func switchToNextTextField(_ textField: UITextField) {
-
+        
         switch textField {
         case self.emailView.textField:
             passwordView.textField.becomeFirstResponder()
@@ -175,7 +196,7 @@ extension RegistrationController: UITextFieldDelegate {
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.switchToNextTextField(textField)
-
+        
         return true
     }
     
@@ -186,6 +207,7 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
         guard let profileImage = info[.editedImage] as? UIImage else { return }
         self.plusPhotoButton.setImage(profileImage.withRenderingMode(.alwaysOriginal), for: .normal)
         self.plusPhotoButton.layer.borderWidth = 1
+        self.profileImage = profileImage
         dismiss(animated: true)
     }
 }
