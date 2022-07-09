@@ -1,0 +1,105 @@
+//
+//  LoginController.swift
+//  Twitter-iOS-No-Storyboard
+//
+//  Created by Sadık Çoban on 8.07.2022.
+//
+
+import UIKit
+
+class LoginController: UIViewController {
+    
+    // MARK: - Properties
+    private lazy var logoImageView: UIImageView = {
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFit
+        view.clipsToBounds = true
+        view.image = UIImage(named: "TwitterLogo")
+        
+        return view
+    }()
+    
+    private lazy var emailView: AuthInputView = {
+        let view = AuthInputView(image: UIImage(named: "mail")!, tintColor: .white, hintText: "Email")
+        
+        return view
+    }()
+    
+    private lazy var passwordView: UIView = {
+        let view = AuthInputView(image: UIImage(named:"ic_lock_outline_white_2x")!, tintColor: .white, hintText: "Password",isSecure: true)
+        
+        return view
+    }()
+    
+    private lazy var loginButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Log In", for: .normal)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 20)
+        button.setTitleColor(.twitterBlue, for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 5
+        button.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
+        
+        return button
+    }()
+    
+
+    private lazy var bottomTextButton: AuthBottomButton = {
+        let firstStr = "Don't have an account? "
+        let secondStr = "Sign Up"
+        let view = AuthBottomButton(firstPartString: firstStr, secondPartString: secondStr, textColor: .white, bgColor: .clear, target: self, selector: #selector(didTapSignUp))
+        return view
+    }()
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureUI()
+    }
+    
+    // MARK: - Selectors
+    
+    @objc func didTapLogin(){
+        
+    }
+    
+    @objc func didTapSignUp(){
+        print("tapped sign up")
+    }
+    
+    // MARK: - Helpers
+    
+    func configureUI(){
+        view.backgroundColor = .twitterBlue
+        navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.isHidden = true
+        view.addSubview(logoImageView)
+        logoImageView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(view.safeAreaInsets.top).offset(70)
+            make.width.height.equalTo(150)
+        }
+        loginButton.snp.makeConstraints { make in
+            make.height.equalTo(50)
+        }
+        
+        let stack = UIStackView(arrangedSubviews: [emailView,passwordView, loginButton])
+        stack.axis = .vertical
+        stack.spacing = 32
+        
+        view.addSubview(stack)
+
+        stack.snp.makeConstraints { make in
+            make.top.equalTo(logoImageView.snp.bottom).offset(50)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+        }
+        view.addSubview(bottomTextButton)
+        bottomTextButton.snp.makeConstraints { make in
+            make.height.equalTo(30)
+            make.bottom.equalTo(view.safeAreaInsets).offset(-48)
+            make.centerX.equalToSuperview()
+        }
+    }
+}
