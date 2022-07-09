@@ -32,7 +32,7 @@ class MainTabController: UITabBarController {
     
     // MARK: - Selectors
     @objc func didTapActionButton(){
-        
+        navigationController?.pushViewController(FeedController(), animated: true)
     }
     
     
@@ -54,17 +54,17 @@ class MainTabController: UITabBarController {
         let notifications = templateNavigationController(image: UIImage(named: "like_unselected"), rootVC: NotificationsController())
         let conversation = templateNavigationController(image: UIImage(named: "ic_mail_outline_white_2x-1"), rootVC: ConversationController())
 
-
-        viewControllers = [ feed, explore, notifications, conversation ]
+        self.viewControllers = [ feed, explore, notifications, conversation ]
+       
 
         
     }
     
-    func templateNavigationController(image: UIImage?, rootVC: UIViewController) -> UINavigationController {
+    func templateNavigationController(image: UIImage?, rootVC: UIViewController) -> UIViewController {
         
         let navVC = UINavigationController(rootViewController: rootVC)
         navVC.tabBarItem.image = image
-        navVC.navigationBar.barTintColor = .green
+        navVC.isNavigationBarHidden = false
         return navVC
     }
 

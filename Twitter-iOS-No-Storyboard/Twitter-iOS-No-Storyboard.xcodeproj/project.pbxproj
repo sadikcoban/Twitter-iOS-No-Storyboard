@@ -14,6 +14,10 @@
 		945C014E28789775008BFD8A /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C014D28789775008BFD8A /* NotificationsController.swift */; };
 		945C015028789790008BFD8A /* ConversationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C014F28789790008BFD8A /* ConversationController.swift */; };
 		945C01522878A4EE008BFD8A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C01512878A4EE008BFD8A /* Extensions.swift */; };
+		945C01552878A883008BFD8A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C01542878A883008BFD8A /* LoginController.swift */; };
+		945C01572878A8CB008BFD8A /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C01562878A8CB008BFD8A /* RegistrationController.swift */; };
+		945C01592878AFBC008BFD8A /* AuthInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C01582878AFBC008BFD8A /* AuthInputView.swift */; };
+		945C015B2878B742008BFD8A /* AuthBottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945C015A2878B742008BFD8A /* AuthBottomButton.swift */; };
 		94D92B29287892A0002598F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D92B28287892A0002598F1 /* AppDelegate.swift */; };
 		94D92B2B287892A0002598F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D92B2A287892A0002598F1 /* SceneDelegate.swift */; };
 		94D92B32287892A1002598F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94D92B31287892A1002598F1 /* Assets.xcassets */; };
@@ -27,6 +31,10 @@
 		945C014D28789775008BFD8A /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		945C014F28789790008BFD8A /* ConversationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationController.swift; sourceTree = "<group>"; };
 		945C01512878A4EE008BFD8A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		945C01542878A883008BFD8A /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		945C01562878A8CB008BFD8A /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		945C01582878AFBC008BFD8A /* AuthInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInputView.swift; sourceTree = "<group>"; };
+		945C015A2878B742008BFD8A /* AuthBottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBottomButton.swift; sourceTree = "<group>"; };
 		94D92B25287892A0002598F1 /* Twitter-iOS-No-Storyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitter-iOS-No-Storyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D92B28287892A0002598F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94D92B2A287892A0002598F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +65,8 @@
 		945C013F287894EA008BFD8A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				945C01582878AFBC008BFD8A /* AuthInputView.swift */,
+				945C015A2878B742008BFD8A /* AuthBottomButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -71,6 +81,7 @@
 		945C0141287894EE008BFD8A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				945C01532878A868008BFD8A /* Authentication */,
 				945C014428789584008BFD8A /* MainTabController.swift */,
 				945C014928789738008BFD8A /* FeedController.swift */,
 				945C014B2878976A008BFD8A /* ExploreController.swift */,
@@ -93,6 +104,15 @@
 				945C01512878A4EE008BFD8A /* Extensions.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		945C01532878A868008BFD8A /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				945C01542878A883008BFD8A /* LoginController.swift */,
+				945C01562878A8CB008BFD8A /* RegistrationController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		94D92B1C287892A0002598F1 = {
@@ -208,11 +228,15 @@
 				945C014E28789775008BFD8A /* NotificationsController.swift in Sources */,
 				94D92B29287892A0002598F1 /* AppDelegate.swift in Sources */,
 				945C014C2878976A008BFD8A /* ExploreController.swift in Sources */,
+				945C01572878A8CB008BFD8A /* RegistrationController.swift in Sources */,
+				945C015B2878B742008BFD8A /* AuthBottomButton.swift in Sources */,
 				945C01522878A4EE008BFD8A /* Extensions.swift in Sources */,
+				945C01552878A883008BFD8A /* LoginController.swift in Sources */,
 				94D92B2B287892A0002598F1 /* SceneDelegate.swift in Sources */,
 				945C014528789584008BFD8A /* MainTabController.swift in Sources */,
 				945C015028789790008BFD8A /* ConversationController.swift in Sources */,
 				945C014A28789738008BFD8A /* FeedController.swift in Sources */,
+				945C01592878AFBC008BFD8A /* AuthInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,9 +373,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 828D65W9F7;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = L5ZNN8PV3P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Twitter-iOS-No-Storyboard/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -365,8 +391,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sadikcoban.Twitter-iOS-No-Storyboard";
+				PRODUCT_BUNDLE_IDENTIFIER = com.samenta.swftuiFirst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = firstProject;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -378,9 +406,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 828D65W9F7;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = L5ZNN8PV3P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Twitter-iOS-No-Storyboard/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -394,8 +424,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sadikcoban.Twitter-iOS-No-Storyboard";
+				PRODUCT_BUNDLE_IDENTIFIER = com.samenta.swftuiFirst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = firstProject;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
