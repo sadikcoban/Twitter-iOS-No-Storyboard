@@ -52,5 +52,7 @@ struct AuthService {
         }
     }
     
-    
+    func login(withEmail email: String, password: String, completion: @escaping ((AuthDataResult?, Error?) -> Void)){
+        Auth.auth().signIn(withEmail: email, password: password, completion: completion)
+    }
 }

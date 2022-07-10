@@ -86,11 +86,22 @@ class LoginController: UIViewController {
     }
     
     // MARK: - Selectors
-    
+
     @objc func didTapLogin(){
-        let email = emailView.textField.text ?? ""
-        let password = passwordView.textField.text ?? ""
-        print("email: \(email)\npassword: \(password)")
+        guard let email = emailView.textField.text, email != "" else { return }
+        guard let password = passwordView.textField.text, password != "" else { return }
+        AuthService.shared.login(withEmail: email, password: password) {[weak self] result, error in
+            if let error = error {
+                print("DEFDEFDE")
+                // TODO: Handle error during login
+                return
+            }
+            guard let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) else { return }
+            guard let controller = window.rootViewController as? MainTabController else { return }
+            controller.authenticateUserAndConfigureUI()
+            self?.dismiss(animated: true)
+
+        }
     }
     
     @objc func didTapSignUp(){

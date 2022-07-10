@@ -7,8 +7,18 @@
 
 import UIKit
 import SnapKit
+import Firebase
 
 class MainTabController: UITabBarController {
+    
+    private var user: User? {
+        didSet {
+            print("running didset")
+            guard let nav = viewControllers?[0] as? UINavigationController else { return }
+            guard let feed = nav.viewControllers.first as? FeedController else { return }
+            feed.user = user
+        }
+    }
     
     // MARK: - Properties
     private lazy var actionButton: UIButton = {
@@ -25,14 +35,40 @@ class MainTabController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configureViewControllers()
-        configureUI()
+        view.backgroundColor = .twitterBlue
+        authenticateUserAndConfigureUI()
+    }
+    
+    // MARK: - API
+    
+    func fetchUser(){
+        UserService.shared.fetchUser { user in
+            print(user.username)
+            self.user = user
+        }
+    }
+    func authenticateUserAndConfigureUI(){
+
+        if Auth.auth().currentUser == nil {
+            DispatchQueue.main.async {
+                let nav = UINavigationController(rootViewController: LoginController())
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true)
+            }
+        } else {
+            configureViewControllers()
+            configureUI()
+            fetchUser()
+        }
     }
     
     // MARK: - Selectors
     @objc func didTapActionButton(){
-        navigationController?.pushViewController(FeedController(), animated: true)
+        guard let user = user else { return }
+        let nav = UINavigationController(rootViewController: UploadTweetController(user: user))
+        nav.modalPresentationStyle = .fullScreen
+
+        present(nav, animated: true)
     }
     
     
