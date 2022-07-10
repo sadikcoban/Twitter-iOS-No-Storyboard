@@ -102,6 +102,8 @@ class RegistrationController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+   
+  
         self.hideKeyboardWhenTappedAround()
         configureUI()
     }
@@ -170,6 +172,7 @@ class RegistrationController: UIViewController {
             make.bottom.equalTo(view.safeAreaInsets).offset(-48)
             make.centerX.equalToSuperview()
         }
+        
     }
 }
 extension RegistrationController: UITextFieldDelegate {

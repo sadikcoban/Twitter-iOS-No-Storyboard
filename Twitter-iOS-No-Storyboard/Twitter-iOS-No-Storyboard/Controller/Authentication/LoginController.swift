@@ -56,6 +56,8 @@ class LoginController: UIViewController {
         return button
     }()
     
+    
+    
 
     private lazy var bottomTextButton: AuthBottomButton = {
         let firstStr = "Don't have an account? "
